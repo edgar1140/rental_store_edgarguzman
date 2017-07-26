@@ -25,12 +25,12 @@ def make_inventory():
     Take the file an return the file into a list
 
     >>> make_inventory()
-    [['JBL DJ speakers, 80], [JBL stage speakers, 120], [JBL bass stage speakers, 135], 
-    [ Numark NVII Dual Display USB DJ Controller, 600], [Numark Mixtrack Platinum DJ Controller, 185]]
+    [['JBL DJ speakers, 56], [JBL stage speakers, 60], [JBL bass stage speakers, 60], 
+    [ Numark NVII Dual Display USB DJ Controller, 20], [Numark Mixtrack Platinum DJ Controller, 23]]
     """
     Equipment = []
     with open('inventory.txt', 'r') as file:
-        for each in friuts:
+        for each in Equipment:
         split_string = line.split(', ')
         Equipment.append([split_string[0], int(split_string[1])])
     return Equipment
@@ -40,10 +40,12 @@ def pretty_inventory(Equipment):
     Take the list and retrns it back to a string
 
     >>> pretty_incentory(Equipment)
-    1. Apples (20) 
-    2. lemons (30) 
-    3. Mangos (20) 
-    4. Oranges (20)
+    1. JBL DJ speakers, 56
+    2. JBL stage speakers, 60
+    3. JBL bass stage speakers, 60
+    4. Numark NVII Dual Display USB DJ Controller, 20
+    5. Numark Mixtrack Platinum DJ Controller, 23
+
     """
     message = ''
     c = 1
