@@ -1,5 +1,6 @@
-JBL DJ speakers, $80
-JBL stage speakers, $120
-JBL bass stage speakers, $135
-Numark NVII Dual Display USB DJ Controller, $600
-Numark Mixtrack Platinum DJ Controller, $185
+item, quantity, rental price, deposit, replacement price
+JBL DJ speakers, 56, $80, $52, $520
+JBL stage speakers, 60, $120, $100, $1000
+JBL bass stage speakers, 60, $130, $100, $1000
+Numark NVII Dual Display USB DJ Controller, 20, $600, $75, $750 
+Numark Mixtrack Platinum DJ Controller, 23, $185, $35, $350 

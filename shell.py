@@ -15,24 +15,24 @@ def main():
     items = input(msg)
     if items == '1':
         amount = int(input('What amount would you like to purchase?\n'))
-        total_amount += #(core.py.count_price(items, amount) * 80)
-        #fruits = core.py
+        total_amount += (core.py.count_price(items, amount) * 1.07 =)
+        Equipment = core.py
         print('Your price will be ${:.2f}'.format(core.py.count price(items, amount)))
     elif items == '2':
             amount = int(input('What amount would you like to purchase?\n'))
-    total_amount += #(core.py.count_price(items, amount) * 120)
+    total_amount += (core.py.count_price(items, amount) * 120)
     print('Your price will be ${:.2f}'.format(core.py.count price(items, amount)))
     elif items == '3':
             amount = int(input('What amount would you like to purchase?\n'))
-    total_amount += #(core.py.count_price(items, amount) * 135)
+    total_amount += (core.py.count_price(items, amount) * 135)
     print('Your price will be ${:.2f}'.format(core.py.count price(items, amount)))
     elif items == '4':
             amount = int(input('What amount would you like to purchase?\n'))
-    total_amount += #(core.py.count_price(items, amount) * 600)
+    total_amount += (core.py.count_price(items, amount) * 600)
     print('Your price will be ${:.2f}'.format(core.py.count price(items, amount)))
     elif items == '5':
             amount = int(input('What amount would you like to purchase?\n'))
-    total_amount += #(core.py.count_price(items, amount) * 185)
+    total_amount += (core.py.count_price(items, amount) * 185)
     print('Your price will be ${:.2f}'.format(core.py.count price(items, amount)))
     else:
             print('Sorry invalid option')
