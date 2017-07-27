@@ -4,37 +4,38 @@ import disk.py
 def main():
     print('Welcome to Chemas DJ Gear Store. ', end='')
    msg = ''' What items would you like to purchse?/n'
-    \t1. JBL DJ speakers, $80\n
-    \t2. JBL stage speakers, $120\n
-    \t3. JBL bass stage speakers, $135\n
-    \t4. Numark NVII Dual Display USB DJ Controller, $600\n
-    \t5. Numark Mixtrack Platinum DJ Controller, $185\n
+    \t1. djspeakers, $80\n
+    \t2. stagespeakers, $120\n
+    \t3. subspeakers, $135\n
+    \t4. djController, $600\n
+    \t5. mixingboards, $185\n
     pess Q to finish and pay.\n'''
     while items != 'Q':
         items = input(msg)
-    if items == '1'or items.lower() == 'one':
-        amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * 1.07)
-        Equipment = core.py
-        print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '2' or items.lower() == 'two': 
-        amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * 1.07)
-        print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '3' or items.lower() == 'three':
-        amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * 1.07)
-        print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '4' or items.lower() == 'four':
-        amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * 1.07)
-        print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '5' or items.lower() == 'five':
-        amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * 1.07)
-        print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    else:
-            print('Sorry invalid option')
+        if items == '1'or items.lower() == 'one':
+            amount = float(input('What amount would you like to purchase?\n'))
+            total_amount += (core.py.count_price(items, amount) * 1.07)
+            Equipment = core.py
+            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
+        elif items == '2' or items.lower() == 'two': 
+            amount = float(input('What amount would you like to purchase?\n'))
+            total_amount += (core.py.count_price(items, amount) * 1.07)
+            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
+        elif items == '3' or items.lower() == 'three':
+            amount = float(input('What amount would you like to purchase?\n'))
+            total_amount += (core.py.count_price(items, amount) * 1.07)
+            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
+        elif items == '4' or items.lower() == 'four':
+            amount = float(input('What amount would you like to purchase?\n'))
+            total_amount += (core.py.count_price(items, amount) * 1.07)
+            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
+        elif items == '5' or items.lower() == 'five':
+            amount = float(input('What amount would you like to purchase?\n'))
+            total_amount += (core.py.count_price(items, amount) * 1.07)
+            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
+        else:
+                print('Sorry invalid option')
+
 
     print('Thank you, Have a nice day!:)')
 

@@ -10,7 +10,7 @@ def count_price(items, amount):
     djController = 600
     mixingboard = 185
 
-    if  items == '1':
+    if  items == '1'
         return float(djspeakers * amount)
     elif  items == '2':
         return float(stagespeakers * amount) 
@@ -19,7 +19,7 @@ def count_price(items, amount):
     elif  items == '4':
         return float(djController * amount) 
     elif  items == '5':
-        return float(mixingboard * amount) 
+        return float(mixingboard * amount)
 
 def make_inventory():
     """ () -> List[(str, int)]
