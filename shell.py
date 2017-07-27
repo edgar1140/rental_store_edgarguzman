@@ -2,8 +2,9 @@ import core.py
 import disk.py
 
 def main():
-    msg = ''' Welcome to Chema's DJ Gear Store, What items would you like to purchse?/n
-    \t1. JBL dj speakers, $80
+    print(Welcome to Chema's DJ Gear Store. ', end='')
+   msg = ''' What items would you like to purchse?/n'
+    \t1. JBL DJ speakers, $80
     \t2. JBL stage speakers, $120
     \t3. JBL bass stage speakers, $135
     \t4. Numark NVII Dual Display USB DJ Controller, $600
@@ -13,31 +14,33 @@ def main():
     total_amount = 0
     while items != 'Q':
         items = input(msg)
-    if items == '1':
+    if items == '1'or items.lower() == 'one':
         amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * .07)
+        total_amount += (core.py.count_price(items, amount) * 1.07)
         Equipment = core.py
         print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '2':
+    elif items == '2' or items.lower() == 'two': 
         amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * .07)
+        total_amount += (core.py.count_price(items, amount) * 1.07)
         print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '3':
+    elif items == '3' or items.lower() == 'three':
         amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * .07)
+        total_amount += (core.py.count_price(items, amount) * 1.07)
         print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '4':
+    elif items == '4' or items.lower() == 'four':
         amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * .07)
+        total_amount += (core.py.count_price(items, amount) * 1.07)
         print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-    elif items == '5':
+    elif items == '5' or items.lower() == 'five':
         amount = float(input('What amount would you like to purchase?\n'))
-        total_amount += (core.py.count_price(items, amount) * .07)
+        total_amount += (core.py.count_price(items, amount) * 1.07)
         print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
     else:
             print('Sorry invalid option')
 
     print('Thank you, Have a nice day!:)')
+
+    
 
 
 
@@ -45,51 +48,43 @@ if __name__ == '__main__':
     main()
 
 
+    def main():
+    print('Hello! welcome to Juan Way Gas Station. ', end='')
+    
+    msg = '''Which type of gass would you like?
+    \t1. Regular $1.17\n
+    \t2. Midgrade $1.20\n
+    \t3. Premium $2.50\n '''
+   What items would you like to purchse?/n'
+        if gas.lower() == 'revenue':
+            left = Juan_Way_Gas_disk.in_the_log()
+            print('your total revenue is ${:.2f}'.format(Juan_Way_Gas_Core.revenue_log(left)))
+            return None
+        if gas == '1' or gas.lower() == 'one'or gas == '2' or gas.lower() == 'two' or gas == '3' or gas.lower() == 'three':
+            break
 
-
-
-
-
-def main():
-    msg = '''What items would you like to purchase?\n
-    \t1. Apples.$0.75
-    \t2. lemons.$0.50
-    \t3. Mangos $0.99
-    \t4. Oranges $0.75
-    press Q to finish and pay.\n '''
-    items = ''
-    total_amount = 0
-    while items != 'Q':
-        items = input(msg)
-        if items == '1':
-            amount = int(input('What amount would you like purchse?\n'))
-            total_amount += (store_program_core.count_price(items, amount) * 1.07)
-            fruits = store_program_core
-            print('Your price will be ${:.2f}'.format(store_program_core.count_price(items,amount))) 
-        elif items == '2':
-            amount = int(input('What amount would you like purchse\n'))
-            total_amount += (store_program_core.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(store_program_core.count_price(items,amount))) 
-        elif items == '3':
-            amount = int(input('What amount would you like purchse?\n'))
-            total_amount += (store_program_core.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(store_program_core.count_price(items,amount))) 
-        elif items == '4':
-            amount = int(input('What amount would you like purchse?\n'))
-            total_amount += (store_program_core.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(store_program_core.count_price(items,amount))) 
-        elif items == 'Q':
-            print("Your total amount will be  ${:.2f}".format(total_amount))
         else:
-            print('Sorry invalid option')
+            print('Sorry, invalid choice!')
+    amount = input('How many gallons would you like? ')
+    if not amount.strip().isnumeric():
+        print('Sorry, invalid choice!')
+        return None
 
-    print('Thank you, Have a nice day!:)')
-
+    
+    gas_type = Juan_Way_Gas_Core.get_gas_type(gas)
+    if not Juan_Way_Gas_Core.take_away(gas_type, amount):
+        print('Please come back later.')
+        return None
+    
+    print('Your total will be ${:.2f}'.format(Juan_Way_Gas_Core.gas_price(gas, amount)))
+    Juan_Way_Gas_Core.keep_log(gas, amount, gas_type)
+    print('Thank you for shopping with us today! Have a nice day!!')
 
 
 if __name__ == '__main__':
+    main()
 
-     main()
+
 
         
 
