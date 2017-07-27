@@ -54,4 +54,8 @@ def pretty_inventory(Equipment):
         message += '{0}. {1} ({2})\n'.format(c,item[0].title(),item[1])
 
     return message
+
+def refresh(left):
+    refresh = core.refresh(left)
+    return refresh
     
