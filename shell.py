@@ -2,16 +2,14 @@ import core.py
 import disk.py
 
 def main():
-    print(Welcome to Chema's DJ Gear Store. ', end='')
+    print('Welcome to Chemas DJ Gear Store. ', end='')
    msg = ''' What items would you like to purchse?/n'
-    \t1. JBL DJ speakers, $80
-    \t2. JBL stage speakers, $120
-    \t3. JBL bass stage speakers, $135
-    \t4. Numark NVII Dual Display USB DJ Controller, $600
-    \t5. Numark Mixtrack Platinum DJ Controller, $185
+    \t1. JBL DJ speakers, $80\n
+    \t2. JBL stage speakers, $120\n
+    \t3. JBL bass stage speakers, $135\n
+    \t4. Numark NVII Dual Display USB DJ Controller, $600\n
+    \t5. Numark Mixtrack Platinum DJ Controller, $185\n
     pess Q to finish and pay.\n'''
-    items = ''
-    total_amount = 0
     while items != 'Q':
         items = input(msg)
     if items == '1'or items.lower() == 'one':
@@ -48,14 +46,20 @@ if __name__ == '__main__':
     main()
 
 
-    def main():
+   def main():
     print('Hello! welcome to Juan Way Gas Station. ', end='')
     
     msg = '''Which type of gass would you like?
     \t1. Regular $1.17\n
     \t2. Midgrade $1.20\n
     \t3. Premium $2.50\n '''
-   What items would you like to purchse?/n'
+    while True:
+        gas = input(msg)
+        if gas.lower() == 'refuel':
+            left = Juan_Way_disk.in_the_tank()
+            Juan_Way_Gas_Core.refill(left)
+            print('Tanks refueled.')
+            return None
         if gas.lower() == 'revenue':
             left = Juan_Way_Gas_disk.in_the_log()
             print('your total revenue is ${:.2f}'.format(Juan_Way_Gas_Core.revenue_log(left)))

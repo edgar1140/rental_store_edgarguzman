@@ -1,13 +1,14 @@
 def count_price(items, amount):
+
     """ (float) -> (float)
     Adds up the price of the amount of items of the purachase.
     Reurns the total price.
     """
-    JBL DJ speakers, 80
-    JBL stage speakers, 120
-    JBL bass stage speakers, 135
-    Numark NVII Dual Display USB DJ Controller, 600
-    Numark Mixtrack Platinum DJ Controller, 185
+    JBL DJ speakers = 80
+    JBL stage speakers = 120
+    JBL bass stage speakers = 135
+    Numark NVII Dual Display USB DJ Controller = 600
+    Numark Mixtrack Platinum DJ Controller = 185
 
     if  items == '1':
         return float(JBL DJ speakers * amount)
@@ -53,6 +54,4 @@ def pretty_inventory(Equipment):
         message += '{0}. {1} ({2})\n'.format(c,item[0].title(),item[1])
 
     return message
-
-
     
