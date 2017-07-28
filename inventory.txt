@@ -1,6 +1,6 @@
 item, quantity, rental price, deposit, replacement price
-djspeakers, 56, $80, $52, $520
-stagespeakers, 60, $120, $100, $1000
-subspeakers, 60, $130, $100, $1000
-djController, 20, $600, $75, $750 
-mixingboard, 23, $185, $35, $350 
+djspeakers, 100, $80, $52, $520
+stagespeakers, 100, $120, $100, $1000
+subspeakers, 100, $130, $100, $1000
+djController, 100, $600, $75, $750 
+mixingboard, 100, $185, $35, $350 

@@ -1,61 +1,52 @@
-def count_price(items, amount):
+def gear_price(gear, amount):
+    """ str -> Float"""
+    if gear == '1':
+        return float(amount) * 1.17
+    elif gear == '2':
+        return float(amount) * 1.20
+    elif gear == '3':
+        return float(amount) * 2.50
+    elif gear == '4':
+        return float(amount) * 333333
+    elif gear == '5':
+        return float(amount) * 333333
 
-    """ (float) -> (float)
-    Adds up the price of the amount of items of the purachase.
-    Reurns the total price.
-    """
-    djspeakers = 80
-    stagespeakers = 120
-    subspeakers = 135
-    djController = 600
-    mixingboard = 185
+def get_gear_type(gear):
+    """(str, float) --> str"""
+    if gear == '1' or gear.lower() == 'one':
+        gear_type = 'Regular'
+    elif gear == '2' or gear.lower() == 'two':
+        gear_type = 'Midgrade'
+    elif gear == '3' or gear.lower() == 'three':
+        gear_type = 'Premium'
+    elif gear == '4' or gear.lower() == 'four':
+        gear_type = """"""
+    elif gear == '5' or gear.lower() == 'five':
+        gear_type == """""""
+    return gear_type
 
-    if  items == '1'
-        return float(djspeakers * amount)
-    elif  items == '2':
-        return float(stagespeakers * amount) 
-    elif  items == '3':
-        return float(subspeakers * amount) 
-    elif  items == '4':
-        return float(djController * amount) 
-    elif  items == '5':
-        return float(mixingboard * amount)
+def keep_history(gear,amount, gear_type):
+    price = gear_price(gear, amount)
+    history = disk.keep_history(gear,amount,get_gear_type)
+    return history
 
-def make_inventory():
-    """ () -> List[(str, int)]
-    Take the file an return the file into a list
 
-    >>> make_inventory()
-    [[djspeakers = 56], [stagespeakers = 60], [subspeakers = 60], 
-    [ djController = 20], [mixingboard = 23]]
-    """
-    Equipment = []
-    with open('inventory.txt', 'r') as file:
-        for each in Equipment:
-            split_string = line.split(', ')
-            Equipment.append([split_string[0], int(split_string[1])])
-        return Equipment
+def revenue_history(left):
+    """ return float value of total dollars spent"""
+    
+    price = 0 
+    for item in left:
+        price += item[2]
+    return price
+   
 
-def pretty_inventory(Equipment):
-    """ list -> str
-    Take the list and retrns it back to a string
 
-    >>> pretty_incentory(Equipment)
-    1. djspeakers, 56
-    2. stagespeakers, 60
-    3. subspeakers, 60
-    4. djController, 20
-    5. mixingboard, 23
+def take_away(get_gear_type, amount):
+    take_out = disk.takes_away(get_gear_type, amount)
+    return take_out
 
-    """
-    message = ''
-    c = 1
-    for item in Equipment:
-        message += '{0}. {1} ({2})\n'.format(c,item[0].title(),item[1])
-
-    return message
-
-def refresh(left):
-    refresh = core.refresh(left)
+def restock(left):
+    refresh = disk.restock(left)
     return refresh
+
     

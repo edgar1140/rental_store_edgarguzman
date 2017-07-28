@@ -3,94 +3,44 @@ import disk.py
 
 def main():
     print('Welcome to Chemas DJ Gear Store. ', end='')
-   msg = ''' What items would you like to purchse?/n'
+    msg = ''' What items would you like to purchse?/n'
     \t1. djspeakers, $80\n
     \t2. stagespeakers, $120\n
     \t3. subspeakers, $135\n
     \t4. djController, $600\n
     \t5. mixingboards, $185\n
     pess Q to finish and pay.\n'''
-    while items != 'Q':
-        items = input(msg)
-        if items == '1'or items.lower() == 'one':
-            amount = float(input('What amount would you like to purchase?\n'))
-            total_amount += (core.py.count_price(items, amount) * 1.07)
-            Equipment = core.py
-            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-        elif items == '2' or items.lower() == 'two': 
-            amount = float(input('What amount would you like to purchase?\n'))
-            total_amount += (core.py.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-        elif items == '3' or items.lower() == 'three':
-            amount = float(input('What amount would you like to purchase?\n'))
-            total_amount += (core.py.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-        elif items == '4' or items.lower() == 'four':
-            amount = float(input('What amount would you like to purchase?\n'))
-            total_amount += (core.py.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-        elif items == '5' or items.lower() == 'five':
-            amount = float(input('What amount would you like to purchase?\n'))
-            total_amount += (core.py.count_price(items, amount) * 1.07)
-            print('Your price will be ${:.2f}'.format(core.py.count_price(items, amount)))
-        else:
-                print('Sorry invalid option')
-
-
-    print('Thank you, Have a nice day!:)')
-
-    
-
-
-
-if __name__ == '__main__':
-    main()
-
-
-   def main():
-    print('Hello! welcome to Juan Way Gas Station. ', end='')
-    
-    msg = '''Which type of gass would you like?
-    \t1. Regular $1.17\n
-    \t2. Midgrade $1.20\n
-    \t3. Premium $2.50\n '''
     while True:
-        gas = input(msg)
-        if gas.lower() == 'refuel':
-            left = Juan_Way_disk.in_the_tank()
-            Juan_Way_Gas_Core.refill(left)
-            print('Tanks refueled.')
+        equipment = input(msg)
+        if equipment.lower() == 'refresh':
+            left = disk.in_the_history()
+            Core.refresh(left)
+            print('refreshed.')
             return None
-        if gas.lower() == 'revenue':
-            left = Juan_Way_Gas_disk.in_the_log()
-            print('your total revenue is ${:.2f}'.format(Juan_Way_Gas_Core.revenue_log(left)))
+        if gas.lower() == 'track':
+            left = disk.in_the_history()
+            print('your total sales are  ${:.2f}'.format(Core.track_history(left)))
             return None
-        if gas == '1' or gas.lower() == 'one'or gas == '2' or gas.lower() == 'two' or gas == '3' or gas.lower() == 'three':
+        if gas == '1' or equipment.lower() == 'one'or gas == '2' or equipment.lower() == 'two' or gas == '3' or equipment.lower() == 'three':
             break
 
         else:
             print('Sorry, invalid choice!')
-    amount = input('How many gallons would you like? ')
+    amount = input('What quantity would you like? ')
     if not amount.strip().isnumeric():
         print('Sorry, invalid choice!')
         return None
 
     
-    gas_type = Juan_Way_Gas_Core.get_gas_type(gas)
-    if not Juan_Way_Gas_Core.take_away(gas_type, amount):
+    gas_type = Core.get_gear_type(gear)
+    if not Core.take_away(gear_type, amount):
         print('Please come back later.')
         return None
     
-    print('Your total will be ${:.2f}'.format(Juan_Way_Gas_Core.gas_price(gas, amount)))
-    Juan_Way_Gas_Core.keep_log(gas, amount, gas_type)
+    print('Your total will be ${:.2f}'.format(Core.gear_price(gear, amount)))
+    Core.keep_history(gear, amount, gear_type)
     print('Thank you for shopping with us today! Have a nice day!!')
 
 
 if __name__ == '__main__':
     main()
-
-
-
-        
-
-
