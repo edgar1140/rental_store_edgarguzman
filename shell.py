@@ -5,7 +5,7 @@ def main():
     history = disk.in_the_history()
 
     print('Welcome to Chemas DJ Gear Store. ', end='')
-    msg = ''' What items would you like to purchse?/n'
+    msg = ''' What items would you like to rent?'
     \t1. djspeakers, $80\n
     \t2. stagespeakers, $120\n
     \t3. subspeakers, $135\n
@@ -16,7 +16,6 @@ def main():
         gear = input(msg)
         if gear.lower() == 'refresh':
             core.restock(history)
-            # history = keeps_history(gear, amount, get_gear_type)
             take_out = disk.takes_away(get_gear_type, amount)
             print('refreshed.')
             return None
