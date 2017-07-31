@@ -1,5 +1,5 @@
-import core.py
-import disk.py
+import core
+import disk
 
 def main():
     print('Welcome to Chemas DJ Gear Store. ', end='')
@@ -11,17 +11,19 @@ def main():
     \t5. mixingboards, $185\n
     pess Q to finish and pay.\n'''
     while True:
-        equipment = input(msg)
-        if equipment.lower() == 'refresh':
+        gear = input(msg)
+        if gear.lower() == 'refresh':
             left = disk.in_the_history()
-            Core.refresh(left)
+            core.restock(left)
+            history = disk.keeps_history(gear, amount, get_gear_type)
+            take_out = disk.takes_away(get_gear_type, amount)
             print('refreshed.')
             return None
-        if gas.lower() == 'track':
+        if gear.lower() == 'track':
             left = disk.in_the_history()
-            print('your total sales are  ${:.2f}'.format(Core.track_history(left)))
+            print('your total sales are  ${:.2f}'.format(core.track_history(left)))
             return None
-        if gas == '1' or equipment.lower() == 'one'or gas == '2' or equipment.lower() == 'two' or gas == '3' or equipment.lower() == 'three':
+        if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower() == 'two' or gear == '3' or gear.lower() == 'three' or '4' or gear.lower() == 'four' or '5' or gear.lower () == 'five':
             break
 
         else:
@@ -32,13 +34,13 @@ def main():
         return None
 
     
-    gas_type = Core.get_gear_type(gear)
-    if not Core.take_away(gear_type, amount):
+    gear_type = core.get_gear_type(gear)
+    if not core.take_away(gear, gear_type, amount):
         print('Please come back later.')
         return None
     
-    print('Your total will be ${:.2f}'.format(Core.gear_price(gear, amount)))
-    Core.keep_history(gear, amount, gear_type)
+    print('Your total will be ${:.2f}'.format(core.gear_price(gear, amount)))
+    core.keep_history(gear,amount, gear_type)
     print('Thank you for shopping with us today! Have a nice day!!')
 
 
