@@ -1,7 +1,7 @@
 import core
-def in_the_histoy():
+def in_the_history():
     left = []
-    with open('log.txt', 'r') as file:
+    with open('history.txt', 'r') as file:
         file.readline()
         lines = file.readlines()
     for line in lines:
