@@ -6,35 +6,47 @@ def in_the_history():
         lines = file.readlines()
     for line in lines:
         split_string = line.strip().split(', ')
-        left.append([split_string[0], float(split_string[1]), float(split_string[2].strip().replace('$', ''))])
+        left.append([split_string[0], float(split_string[1]), float(split_string[2]), float(split_string[3]), float(split_string[4])])
     return left
 
-def in_the_inventory():
-    left = []
-    with open('tank.txt', 'r') as file:
+def open_inventory():
+    inventory = []
+    with open('inventory.txt', 'r') as file:
         file.readline()
         lines = file.readlines()
     for line in lines:
-        split_string = line.strip().split(', ')
-        left.append([split_string[0], float(split_string[1]), float(split_string[2])])
-    return left
+        split_string = line.strip().replace('$', '').split(', ')
+        inventory.append([split_string[0], float(split_string[1]), float(split_string[2]), float(split_string[3]), float(split_string[4])])
+    return inventory
+
+# def in_the_inventory():
+#     left = []
+#     with open('inventory.txt', 'r') as file:
+#         file.readline()
+#         lines = file.readlines()
+#     for line in lines:
+#         split_string = line.strip().split(', ')
+#         left.append([split_string[0], float(split_string[1]), float(split_string[2])])
+#     return left
  
-def refresh():
+def restock(inventory):
+    """ [] -> None
+    creates new inventory and writes it to file 
+    """
     str_l = ['item, quantity, rental price, deposit, replacement price']
-    for item in left:
-        if item[1] < 100:
-            item[1] = 100
-        item[1]=str(item[1])
-        item[2]= str(item[2])
+    for item in inventory:
+        if int(item[1]) < 100:
+            (item[1]) = 100
+            item[1] = str(item[1])
+            item[2] = str(item[2])
         str_l.append(', '.join(item))
         message = '\n'.join(str_l)  
-        return message
-    with open('tank.txt', 'w') as file:
+    with open('inventory.txt', 'w') as file:
         file.write(message)
 
 def takes_away(gear_type, amount):
     str_l = ['item, quantity, rental price, deposit, replacement price']
-    left = in_the_inventory()
+    left = open_inventory()
     for item in left:
         if item[0] == gear_type:
             if float(amount) > item[1]:
@@ -47,12 +59,14 @@ def takes_away(gear_type, amount):
         str_l.append(', '.join(item))
         message = '\n'.join(str_l)
 
-    with open('tank.txt', 'w') as file: 
+    with open('inventory.txt', 'w') as file: 
         file.write(message)
     return True
 
 def keeps_history():
     message = '\n{}, {}, ${}'.format(gear,amount,get_gear_type)
-    with open('log.txt', 'a') as file:
+    with open('history.txt', 'a') as file:
         file.write(message)
 
+def close_inventory(inventory):
+    return None
