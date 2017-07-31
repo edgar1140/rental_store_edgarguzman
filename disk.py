@@ -1,3 +1,4 @@
+import core
 def in_the_histoy():
     left = []
     with open('log.txt', 'r') as file:
@@ -49,3 +50,9 @@ def takes_away(gear_type, amount):
     with open('tank.txt', 'w') as file: 
         file.write(message)
     return True
+
+def keeps_history():
+    message = '\n{}, {}, ${}'.format(gear,amount,get_gear_type)
+    with open('log.txt', 'a') as file:
+        file.write(message)
+
