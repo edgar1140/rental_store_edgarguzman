@@ -1,15 +1,15 @@
 def gear_price(gear, amount):
     """ str -> Float"""
     if gear == '1':
-        return float(amount) * 80
+        return float(amount) * 80 * 1.07
     elif gear == '2':
-        return float(amount) * 120
+        return float(amount) * 120 * 1.07
     elif gear == '3':
-        return float(amount) * 130
+        return float(amount) * 130 * 1.07
     elif gear == '4':
-        return float(amount) * 600
+        return float(amount) * 600 * 1.07 
     elif gear == '5':
-        return float(amount) * 185
+        return float(amount) * 185 * 1.07
 
 def get_gear_type(gear):
     """(str, float) --> str"""
