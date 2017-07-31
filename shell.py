@@ -2,8 +2,9 @@ import core
 import disk
 
 def main():
+    inventory = disk.open_inventory()
     history = disk.in_the_history()
-
+    
     print('Welcome to Chemas DJ Gear Store. ', end='')
     msg = ''' What items would you like to rent?'
     \t1. djspeakers, $80\n
@@ -15,10 +16,9 @@ def main():
     while True:
         gear = input(msg)
         if gear.lower() == 'refresh':
-            core.restock(history)
-            take_out = disk.takes_away(get_gear_type, amount)
+            disk.refresh(inventory)
             print('refreshed.')
-            return None
+            exit()
         if gear.lower() == 'track':
             print('your total sales are  ${:.2f}'.format(core.track_history(history)))
             return None
@@ -40,6 +40,7 @@ def main():
     
     print('Your total will be ${:.2f}'.format(core.gear_price(gear, amount)))
     core.keep_history(history, gear, amount, gear_type)
+    disk.close_inventory(inventory)
     print('Thank you for shopping with us today! Have a nice day!!')
 
 
