@@ -1,37 +1,36 @@
 def gear_price(gear, amount):
     """ str -> Float"""
     if gear == '1':
-        return float(amount) * 1.17
+        return float(amount) * 80
     elif gear == '2':
-        return float(amount) * 1.20
+        return float(amount) * 120
     elif gear == '3':
-        return float(amount) * 2.50
+        return float(amount) * 130
     elif gear == '4':
-        return float(amount) * 333333
+        return float(amount) * 600
     elif gear == '5':
-        return float(amount) * 333333
+        return float(amount) * 185
 
 def get_gear_type(gear):
     """(str, float) --> str"""
     if gear == '1' or gear.lower() == 'one':
-        gear_type = 'Regular'
+        gear_type = 'djspeakers'
     elif gear == '2' or gear.lower() == 'two':
-        gear_type = 'Midgrade'
+        gear_type = 'stagespeakers'
     elif gear == '3' or gear.lower() == 'three':
-        gear_type = 'Premium'
+        gear_type = 'subspeakers'
     elif gear == '4' or gear.lower() == 'four':
-        gear_type = """"""
+        gear_type = 'djcontroller'
     elif gear == '5' or gear.lower() == 'five':
-        gear_type == """""""
+        gear_type == 'mixingboard'
     return gear_type
 
-def keep_history(gear,amount, gear_type):
-    price = gear_price(gear, amount)
-    history = disk.keep_history(gear,amount,get_gear_type)
+def keep_history(history, gear,amount, gear_type):
+    price = rental_price(gear, amount)
     return history
 
 
-def revenue_history(left):
+def track_history(left):
     """ return float value of total dollars spent"""
     
     price = 0 
@@ -41,8 +40,7 @@ def revenue_history(left):
    
 
 
-def take_away(get_gear_type, amount):
-    take_out = disk.takes_away(get_gear_type, amount)
+def take_away(take_out, get_gear_type, amount):
     return take_out
 
 def restock(left):
