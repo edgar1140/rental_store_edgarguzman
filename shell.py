@@ -2,6 +2,8 @@ import core
 import disk
 
 def main():
+    history = disk.in_the_history()
+
     print('Welcome to Chemas DJ Gear Store. ', end='')
     msg = ''' What items would you like to purchse?/n'
     \t1. djspeakers, $80\n
@@ -9,19 +11,17 @@ def main():
     \t3. subspeakers, $135\n
     \t4. djController, $600\n
     \t5. mixingboards, $185\n
-    pess Q to finish and pay.\n'''
+    press Q to finish and pay.\n'''
     while True:
         gear = input(msg)
         if gear.lower() == 'refresh':
-            left = disk.in_the_history()
-            core.restock(left)
-            history = disk.keeps_history(gear, amount, get_gear_type)
+            core.restock(history)
+            # history = keeps_history(gear, amount, get_gear_type)
             take_out = disk.takes_away(get_gear_type, amount)
             print('refreshed.')
             return None
         if gear.lower() == 'track':
-            left = disk.in_the_history()
-            print('your total sales are  ${:.2f}'.format(core.track_history(left)))
+            print('your total sales are  ${:.2f}'.format(core.track_history(history)))
             return None
         if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower() == 'two' or gear == '3' or gear.lower() == 'three' or '4' or gear.lower() == 'four' or '5' or gear.lower () == 'five':
             break
@@ -40,7 +40,7 @@ def main():
         return None
     
     print('Your total will be ${:.2f}'.format(core.gear_price(gear, amount)))
-    core.keep_history(gear,amount, gear_type)
+    core.keep_history(history, gear, amount, gear_type)
     print('Thank you for shopping with us today! Have a nice day!!')
 
 

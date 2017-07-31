@@ -25,8 +25,8 @@ def get_gear_type(gear):
         gear_type == 'mixingboard'
     return gear_type
 
-def keep_history(history, gear,amount, gear_type):
-    price = rental_price(gear, amount)
+def keep_history(history, gear, amount, gear_type):
+    price = gear_price(gear, amount)
     return history
 
 
