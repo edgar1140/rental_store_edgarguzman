@@ -10,14 +10,14 @@ def main():
     \t1. djspeakers, $80\n
     \t2. stagespeakers, $120\n
     \t3. subspeakers, $135\n
-    \t4. djController, $600\n
+    \t4. djController, $125\n
     \t5. mixingboards, $185\n
     press Q to finish and pay.\n'''
     while True:
         gear = input(msg)
-        if gear.lower() == 'refresh':
-            disk.refresh(inventory)
-            print('refreshed.')
+        if gear.lower() == 'restock':
+            disk.restock(inventory)
+            print('restocked')
             exit()
         if gear.lower() == 'track':
             print('your total sales are  ${:.2f}'.format(core.track_history(history)))
@@ -34,13 +34,13 @@ def main():
 
     
     gear_type = core.get_gear_type(gear)
-    if not core.take_away(gear, gear_type, amount):
+    if not disk.takes_away(gear_type, amount):
         print('Please come back later.')
         return None
     
     print('Your total will be ${:.2f}'.format(core.gear_price(gear, amount)))
     core.keep_history(history, gear, amount, gear_type)
-    disk.close_inventory(inventory)
+    # disk.close_inventory(inventory)
     print('Thank you for shopping with us today! Have a nice day!!')
 
 
