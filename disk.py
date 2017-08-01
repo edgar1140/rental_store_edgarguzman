@@ -1,13 +1,5 @@
 import core
-def in_the_history():
-    left = []
-    with open('history.txt', 'r') as file:
-        file.readline()
-        lines = file.readlines()
-    for line in lines:
-        split_string = line.strip().split(', ')
-        left.append([split_string[0], float(split_string[1]), float(split_string[2]), float(split_string[3]), float(split_string[4])])
-    return left
+
 
 def open_inventory():
     inventory = []
@@ -23,7 +15,7 @@ def restock(inventory):
     """ [] -> None
     creates new inventory and writes it to file 
     """
-    str_l = ['item, quantity, rental price, deposit, replacement price']
+    str_l = ['gear_type, amount, price, deposit, replacement']
     for item in inventory:
         if int(item[1]) < 100:
             (item[1]) = 100
@@ -39,7 +31,7 @@ def restock(inventory):
 
 
 def takes_away(gear_type, amount):
-    str_l = ['item, quantity, rental price, deposit, replacement price']
+    str_l = ['gear_type, amount, price, deposit, replacement']
     left = open_inventory()
     for item in left:
         if item[0] == gear_type:
@@ -60,13 +52,20 @@ def takes_away(gear_type, amount):
     return True
 
 
-
-def keeps_history():
-    message = '\n{}, {}, ${}'.format(gear_type, amount, price)
+def keeps_history(gear_type, price):
+    message = '\n{}, ${:.2f}'.format(gear_type, price)
     with open('history.txt', 'a') as file:
         file.write(message)
-
-
+    
+def in_the_history():
+    left =[]
+    with open('history.txt', 'r') as file:
+        file.readline()
+        lines = file.readlines()
+    for line in lines:
+        split_string = line.strip().split(', ')
+        left.append([split_string[0], float(split_string[1]).strip().replace('$', '')])
+    return left
 
 # def close_inventory(inventory):
 #     return None
