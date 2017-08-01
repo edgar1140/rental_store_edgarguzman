@@ -40,8 +40,8 @@ def track_history(left):
    
 
 
-def take_away(take_out, get_gear_type, amount):
-    return take_out
+# def take_away(take_out, get_gear_type, amount):
+#     return take_out
 
 
     
