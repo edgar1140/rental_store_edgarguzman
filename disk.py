@@ -19,16 +19,6 @@ def open_inventory():
         inventory.append([split_string[0], float(split_string[1]), float(split_string[2]), float(split_string[3]), float(split_string[4])])
     return inventory
 
-# def in_the_inventory():
-#     left = []
-#     with open('inventory.txt', 'r') as file:
-#         file.readline()
-#         lines = file.readlines()
-#     for line in lines:
-#         split_string = line.strip().split(', ')
-#         left.append([split_string[0], float(split_string[1]), float(split_string[2])])
-#     return left
- 
 def restock(inventory):
     """ [] -> None
     creates new inventory and writes it to file 
@@ -39,10 +29,14 @@ def restock(inventory):
             (item[1]) = 100
             item[1] = str(item[1])
             item[2] = str(item[2])
+            item[3] = str(item[3])
+            item[4] = str(item[4])
         str_l.append(', '.join(item))
-        message = '\n'.join(str_l)  
+        message = '\n'.join(str_l)
+        return message  
     with open('inventory.txt', 'w') as file:
         file.write(message)
+
 
 def takes_away(gear_type, amount):
     str_l = ['item, quantity, rental price, deposit, replacement price']
@@ -56,6 +50,8 @@ def takes_away(gear_type, amount):
                 item[1] = float(item[1]) - float(amount)
         item[1] = str(item[1])
         item[2] = str(item[2])
+        item[3] = str(item[3])
+        item[4] = str(item[4])
         str_l.append(', '.join(item))
         message = '\n'.join(str_l)
 
@@ -63,10 +59,14 @@ def takes_away(gear_type, amount):
         file.write(message)
     return True
 
+
+
 def keeps_history():
-    message = '\n{}, {}, ${}'.format(gear,amount,get_gear_type)
+    message = '\n{}, {}, ${}'.format(gear_type, amount, price)
     with open('history.txt', 'a') as file:
         file.write(message)
 
-def close_inventory(inventory):
-    return None
+
+
+# def close_inventory(inventory):
+#     return None
