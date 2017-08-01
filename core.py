@@ -5,9 +5,9 @@ def gear_price(gear, amount):
     elif gear == '2':
         return float(amount) * 120 * 1.07
     elif gear == '3':
-        return float(amount) * 130 * 1.07
+        return float(amount) * 135 * 1.07
     elif gear == '4':
-        return float(amount) * 600 * 1.07 
+        return float(amount) * 125 * 1.07 
     elif gear == '5':
         return float(amount) * 185 * 1.07
 
@@ -25,23 +25,4 @@ def get_gear_type(gear):
         gear_type == 'mixingboard'
     return gear_type
 
-def keep_history(history, gear, amount, gear_type):
-    price = gear_price(gear, amount)
-    return history
-
-
-def track_history(left):
-    """ return float value of total dollars spent"""
-    
-    price = 0 
-    for item in left:
-        price += item[2]
-    return price
-   
-
-
-# def take_away(take_out, get_gear_type, amount):
-#     return take_out
-
-
-    
+def replacement():
