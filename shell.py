@@ -3,10 +3,10 @@ import disk
 
 def main():
     inventory = disk.open_inventory()
-    history = disk.in_the_history()
+    # history = disk.keep_history()
     
     print('Welcome to Chemas DJ Gear Store. ', end='')
-    msg = ''' What items would you like to rent?'
+    msg = ''' Would you like to rent or return items would you like to rent?'
     \t1. djspeakers, $80\n
     \t2. stagespeakers, $120\n
     \t3. subspeakers, $135\n
@@ -20,14 +20,15 @@ def main():
             print('restocked')
             exit()
         if gear.lower() == 'track':
-            print('your total sales are  ${:.2f}'.format(core.track_history(history)))
+            print('your total sales are  ${:.2f}'.format(disk.keeps_history(gear_type, price)))
+        
             return None
         if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower() == 'two' or gear == '3' or gear.lower() == 'three' or '4' or gear.lower() == 'four' or '5' or gear.lower () == 'five':
             break
 
         else:
             print('Sorry, invalid choice!')
-    amount = input('What quantity would you like? ')
+    amount = input('What amount would you like? ')
     if not amount.strip().isnumeric():
         print('Sorry, invalid choice!')
         return None
@@ -38,8 +39,9 @@ def main():
         print('Please come back later.')
         return None
     
+    price = core.gear_price(gear, amount)
     print('Your total will be ${:.2f}'.format(core.gear_price(gear, amount)))
-    core.keep_history(history, gear, amount, gear_type)
+    disk.keeps_history(gear_type, price)
     # disk.close_inventory(inventory)
     print('Thank you for shopping with us today! Have a nice day!!')
 

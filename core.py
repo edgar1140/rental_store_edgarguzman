@@ -25,4 +25,27 @@ def get_gear_type(gear):
         gear_type == 'mixingboard'
     return gear_type
 
-def replacement():
+def actual_price(gear):
+    """actual price """
+    if gear == '1' or gear.lower() == 'one':
+        return float(350)
+    elif gear == '2' or gear.lower() == 'two':
+        return float(750)
+    elif gear == '3' or gear.lower() == 'three':
+        return float(750)
+    elif gear == '4' or gear.lower() == 'four':
+        return float(600)
+    elif gear == '5' or gear.lower() == 'five':
+        return float(600)
+
+    
+
+def deposit(gear_type):
+    '''deeposit for each item
+    >>> deposit('1')
+    35.0
+    >>> deposit('2')
+    75.0
+    '''
+    gears = (float(gear_type) * float(0.10))
+    return round(gears, 2)

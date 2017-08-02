@@ -1,1 +1,2 @@
-item, quantity, rental price, deposit, replacement price
+gear_type, price
+djspeakers, $85.60
