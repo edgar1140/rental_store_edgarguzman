@@ -1,2 +1,8 @@
 gear_type, price
 djspeakers, $85.60
+stagespeakers, $256.80
+djspeakers, $85.60
+djspeakers, $85.60
+djspeakers, $171.20
+djspeakers, $85.60
+djspeakers, $171.20
