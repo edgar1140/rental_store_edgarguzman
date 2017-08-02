@@ -1,6 +1,7 @@
 import core
 
 
+
 def open_inventory():
     inventory = []
     with open('inventory.txt', 'r') as file:

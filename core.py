@@ -8,8 +8,6 @@ def gear_price(gear, amount):
         return float(amount) * 135 * 1.07
     elif gear == '4':
         return float(amount) * 125 * 1.07 
-    elif gear == '5':
-        return float(amount) * 185 * 1.07
 
 def get_gear_type(gear):
     """(str, float) --> str"""
@@ -21,8 +19,6 @@ def get_gear_type(gear):
         gear_type = 'subspeakers'
     elif gear == '4' or gear.lower() == 'four':
         gear_type = 'djcontroller'
-    elif gear == '5' or gear.lower() == 'five':
-        gear_type == 'mixingboard'
     return gear_type
 
 def actual_price(gear):
@@ -35,17 +31,15 @@ def actual_price(gear):
         return float(750)
     elif gear == '4' or gear.lower() == 'four':
         return float(600)
-    elif gear == '5' or gear.lower() == 'five':
-        return float(600)
 
     
 
-def deposit(gear_type):
+def deposit(gear_type1):
     '''deeposit for each item
     >>> deposit('1')
     35.0
     >>> deposit('2')
     75.0
     '''
-    gears = (float(gear_type) * float(0.10))
+    gears = (float(gear_type1) * float(0.10))
     return round(gears, 2)

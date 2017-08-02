@@ -2,5 +2,4 @@ gear_type, amount, price, deposit, replacement, gear number
 djspeakers, 100, 80.0, 35.0, 350.0, 1.0
 stagespeakers, 100.0, 120.0, 75.0, 750.0, 2.0
 subspeakers, 100.0, 135.0, 75.0, 750.0, 3.0
-djController, 100.0, 125.0, 60.0, 600.0, 4.0
-mixingboards, 100.0, 185.0, 60.0, 600.0, 5.0
+djcontroller, 100.0, 125.0, 60.0, 600.0, 4.0

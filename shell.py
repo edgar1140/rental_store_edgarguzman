@@ -9,7 +9,7 @@ def main():
     \t1. djspeakers, $80\n
     \t2. stagespeakers, $120\n
     \t3. subspeakers, $135\n
-    \t4. djController, $125\n
+    \t4. djcontroller, $125\n
     \t5. mixingboards, $185\n
     press Q to finish and pay.\n'''
     while True:
@@ -30,7 +30,7 @@ def main():
             print('your total sales are  ${:.2f}'.format(disk.keeps_history(gear_type, price)))
         
             return None
-        if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower() == 'two' or gear == '3' or gear.lower() == 'three' or '4' or gear.lower() == 'four' or '5' or gear.lower () == 'five':
+        if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower() == 'two' or gear == '3' or gear.lower() == 'three' or '4' or gear.lower() == 'four' or '5' or gear.lower() == 'five':
             break
 
         else:
