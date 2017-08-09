@@ -7,7 +7,8 @@ def gear_price(gear, amount):
     elif gear == '3':
         return float(amount) * 135 * 1.07
     elif gear == '4':
-        return float(amount) * 125 * 1.07 
+        return float(amount) * 125 * 1.07
+
 
 def get_gear_type(gear):
     """(str, float) --> str"""
@@ -21,6 +22,7 @@ def get_gear_type(gear):
         gear_type = 'djcontroller'
     return gear_type
 
+
 def actual_price(gear):
     """actual price """
     if gear == '1' or gear.lower() == 'one':
@@ -32,7 +34,6 @@ def actual_price(gear):
     elif gear == '4' or gear.lower() == 'four':
         return float(600)
 
-    
 
 def deposit(gear_type1):
     '''deeposit for each item
@@ -43,3 +44,11 @@ def deposit(gear_type1):
     '''
     gears = (float(gear_type1) * float(0.10))
     return round(gears, 2)
+
+
+def revenue_log(left):
+    """ return float value of total dollars spent"""
+    price = 0
+    for item in left:
+        price += item[1]
+    return price

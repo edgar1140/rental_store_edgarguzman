@@ -25,7 +25,7 @@ def main():
             print('Thank you, your deposit back is $' + str(float(deposit)))
             return None 
 
-            # exit()
+            # exit() 
         if gear.lower() == 'track':
             print('your total sales are  ${:.2f}'.format(disk.keeps_history(gear_type, price)))
         
