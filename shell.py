@@ -1,17 +1,18 @@
 import core
 import disk
 
+
 def main():
     inventory = disk.open_inventory()
-    
+
     print('Welcome to Chemas DJ Gear Store. ', end='')
-    msg = ''' Would you like to rent or return items?'
+    msg = '''From options 1-4, what gear would you like to rent.
     \t1. djspeakers, $80\n
     \t2. stagespeakers, $120\n
     \t3. subspeakers, $135\n
     \t4. djcontroller, $125\n
-    \t5. mixingboards, $185\n
-    press Q to finish and pay.\n'''
+    \t5. revenue\n
+    Press in number to select item or type return to return item.\n'''
     while True:
         gear = input(msg)
         if gear.lower() == 'return':
@@ -23,14 +24,20 @@ def main():
             deposit = core.deposit(in_all)
             disk.restock(gear_type, how_much)
             print('Thank you, your deposit back is $' + str(float(deposit)))
-            return None 
-
-            # exit() 
-        if gear.lower() == 'track':
-            print('your total sales are  ${:.2f}'.format(disk.keeps_history(gear_type, price)))
-        
+            disk.keeps_history(gear_type, (-(deposit)))
             return None
-        if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower() == 'two' or gear == '3' or gear.lower() == 'three' or '4' or gear.lower() == 'four' or '5' or gear.lower() == 'five':
+
+        if gear.lower() == 'track':
+            print('your total sales are  ${:.2f}'.format(
+                disk.keeps_history(gear_type, price)))
+        if gear == '5' or gear.lower() == 'five':
+            left = disk.in_the_history()
+            price = core.revenue_log(left)
+            print('your total revenue is ${:.2f}'.format(price))
+            exit()
+        if gear == '1' or gear.lower() == 'one' or gear == '2' or gear.lower(
+        ) == 'two' or gear == '3' or gear.lower(
+        ) == 'three' or '4' or gear.lower() == 'four':
             break
 
         else:
@@ -45,7 +52,7 @@ def main():
     if not disk.takes_away(gear_type, amount):
         print('Please come back later.')
         return None
-    
+
     price = core.gear_price(gear, amount)
     deposit = core.deposit(gear_type1)
     total_all = core.gear_price(gear, amount) + (float(deposit))
